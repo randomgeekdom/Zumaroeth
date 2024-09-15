@@ -10,10 +10,10 @@ export class GameSaverService {
     localStorage.setItem("game", JSON.stringify(game));
   }
 
-  Load(): Game | null {
+  Load(): Game | undefined {
     var gameText = localStorage.getItem("game");
     if (!gameText)
-      return null;
+      return undefined;
 
     return <Game>JSON.parse(gameText);
   }

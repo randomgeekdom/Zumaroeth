@@ -1,4 +1,13 @@
 <div class="game-container">
   <img src="./logo.png" />
+  <div class="card" *ngIf="!game">
+    <div class="card-body">
+      <p class="card-text">{{introduction}}</p>
+    </div>
+  </div>
   <router-outlet />
+  <div class="d-flex flex-row mb-3">
+    <a class="btn btn-primary mx-1" [routerLink]="['/new-game']" >New Game</a>
+    <a class="btn btn-primary mx-1" >Next Turn</a>
+  </div>
 </div>
