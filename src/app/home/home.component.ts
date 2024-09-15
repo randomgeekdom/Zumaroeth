@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
-import Game from '../../models/Game';
+import Game from '../models/Game';
+import { GameSaverService } from '../services/game-saver.service';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,11 @@ import Game from '../../models/Game';
 })
 export class HomeComponent {
 
-  constructor() { 
+  constructor(private gameSaver: GameSaverService) {
   }
 
   TestSave() {
     let game = new Game("test");
-    localStorage.setItem("game", JSON.stringify(game));
+    this.gameSaver.Save(game);
   }
 }
