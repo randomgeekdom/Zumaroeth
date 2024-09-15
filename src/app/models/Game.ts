@@ -1,10 +1,8 @@
 import Entity from "./Entity";
 
 export default class Game extends Entity {
-    name: string;
 
-    constructor(name: string) {
+    constructor() {
         super();
-        this.name = name;
     }
 }
