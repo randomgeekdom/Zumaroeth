@@ -5,16 +5,19 @@
   </div>
 <form>
     <div class="form-group">
-        <label for="name">Nation Name</label>
+        <label for="name" class="form-label">Nation Name</label>
         <input type="text" class="form-control" id="name" [(ngModel)]="game.nationName" name="name">
     </div>
     <div class="form-group">
-        <label for="title">Your Ruler's Title</label>
+        <label for="title" class="form-label">Your Ruler's Title</label>
         <input type="text" class="form-control" id="title" [(ngModel)]="game.rulerTitle" name="title">
     </div>
     <div class="form-group">
-        <label for="rulerName">Your Ruler's Name</label>
+        <label for="rulerName" class="form-label">Your Ruler's Name</label>
         <input type="text" class="form-control" id="name" [(ngModel)]="game.rulerName" name="rulerName">
     </div>
-    <button [disabled]="!game.rulerName || !game.rulerTitle || !game.nationName" type="submit" class="btn btn-primary" (click)="createGame()">Create Game</button>
+    <div class="form-group my-3">
+        <button [disabled]="!game.rulerName || !game.rulerTitle || !game.nationName" type="submit" class="btn btn-primary" (click)="createGame()">Begin Game</button>
+    </div>
+    
 </form>

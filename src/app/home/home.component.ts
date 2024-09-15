@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     if (!!game) {
       this.game = game;
     }
-    else{
+    else {
       this.router.navigate(['/new-game']);
     }
   }

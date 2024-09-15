@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import Game from '../models/Game';
 import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-new-game',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './new-game.component.html',
   styleUrl: './new-game.component.scss'
 })
