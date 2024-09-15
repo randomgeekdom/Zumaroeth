@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  game: import("c:/repos/zumaroeth/src/app/models/Game").default | undefined;
+  game: Game | undefined;
 
   constructor(public gameSaver: GameSaverService, public router: Router) { }
 
