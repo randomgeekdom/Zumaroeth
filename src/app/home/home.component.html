@@ -1,8 +1,9 @@
 <div *ngIf="!!game">
     Nation: {{game.nationName}} 
     Ruler: {{game.rulerTitle}} {{game.rulerName}}
+    Year: {{game.year}}
 </div>
 
 <div class="d-flex flex-row my-3">
-    <a class="btn btn-primary mx-1" >Next Turn</a>
+    <a class="btn btn-primary mx-1" @click="nextTurn()">Next Turn</a>
 </div>
