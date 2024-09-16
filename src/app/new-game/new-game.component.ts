@@ -22,4 +22,13 @@ export class NewGameComponent {
     this.gameSaver.Save(this.game);
     this.router.navigate(['/home']);
   }
+
+  isCreateDisabled(): boolean {
+    return !this.game.nationName || 
+      !this.game.rulerName || 
+      !this.game.rulerTitle || 
+      this.game.nationName.trim().length == 0 || 
+      this.game.rulerName.trim().length == 0 || 
+      this.game.rulerTitle.trim().length == 0;
+  }
 }

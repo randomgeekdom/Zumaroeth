@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import Game from '../models/Game';
 import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
