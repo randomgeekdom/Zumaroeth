@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import Game from '../models/Game';
+import Game from '../models/game';
 import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TurnTakerService } from '../services/turn-taker.service';
-import Alert from '../models/Alert';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +30,6 @@ export class HomeComponent implements OnInit {
 
   nextTurn(): void{
     this.turnTaker.takeTurn(this.game!);
-    this.game?.alerts.push(new Alert("Next turn!", "Info"));
   }
 
   showFirstAlert(): void{
