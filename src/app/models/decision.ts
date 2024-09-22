@@ -1,7 +1,8 @@
 import Choice from "./choice";
 import Entity from "./entity";
+import IBrief from "./interfaces/i-brief";
 
-export default class Decision extends Entity {
+export default class Decision extends Entity implements IBrief {
 
     header = "";
     description = "";
@@ -13,6 +14,6 @@ export default class Decision extends Entity {
         this.header = header;
         this.description = description;
         this.image = image;
-        this.choices = choices;
+        this.choices = choices;   
     }
 }
