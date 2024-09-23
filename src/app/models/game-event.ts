@@ -1,8 +1,7 @@
 import Choice from "./choice";
 import Entity from "./entity";
-import IBrief from "./interfaces/i-brief";
 
-export default class Decision extends Entity implements IBrief {
+export default class GameEvent extends Entity {
 
     header = "";
     description = "";

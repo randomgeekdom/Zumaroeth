@@ -1,10 +1,17 @@
-<div *ngIf="!!game">
-    <h4>Zumaroeth</h4>
-    <h6>Ruler: {{game.rulerTitle}} {{game.ruler.firstName}} {{game.ruler.lastName}}</h6>
-    <h6>Year: {{game.year}}</h6>
+<h6>Ruler: {{game?.rulerTitle}} {{game?.ruler?.firstName}} {{game?.ruler?.lastName}}</h6>
+<h6>Year: {{game?.year}}</h6>
+<div *ngIf="!!game" class="d-flex flex-wrap">
+    <div class="card">
+        <ul class="list-group">
+            <li *ngFor="let event of events" class="list-group-item" (click)="nextTurn()" style="cursor: pointer">
+                <img class="img img-thumbnail" src="{{event.image}}" />
+                {{event.header}}
+            </li>
+        </ul>
+    </div>
+    <div class="card">
+    </div>
 </div>
-
 <div class="d-flex flex-row my-3">
-    <a *ngIf="!!game && game.alerts.length === 0" class="btn btn-primary mx-1" (click)="nextTurn()">Next Turn</a>
-    <a *ngIf="!!game && game.alerts.length > 0" class="btn btn-primary mx-1" (click)="showFirstAlert()">Alerts ({{game.alerts.length}})</a>
+    <button [disabled]="events.length > 0" class="btn btn-primary mx-1" (click)="nextTurn()">Next Turn</button>
 </div>

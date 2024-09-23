@@ -4,11 +4,13 @@ import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TurnTakerService } from '../services/turn-taker.service';
+import { FormsModule } from '@angular/forms';
+import GameEvent from '../models/game-event';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -28,14 +30,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  nextTurn(): void{
+  nextTurn(): void {
     this.turnTaker.takeTurn(this.game!);
   }
 
-  showFirstAlert(): void{
-    if(!!this.game){
-      alert(this.game!.alerts[0].message);
-      this.game.alerts.shift();
-    }
+  get events(): GameEvent[] {
+    return [... this.game?.events ?? []];
   }
 }

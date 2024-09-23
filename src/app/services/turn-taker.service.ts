@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GameSaverService } from './game-saver.service';
 import Game from '../models/game';
-import Alert from '../models/alert';
+import GameEvent from '../models/game-event';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class TurnTakerService {
 
   takeTurn(game: Game) {
     game.year ++;
-    game.alerts.push(new Alert("Next turn!", "Info"));
+    var event = new GameEvent("A new turn", "A new turn", "", [])
+    game.events.push(event);
     this.gameSaver.Save(game);
   }
 }
