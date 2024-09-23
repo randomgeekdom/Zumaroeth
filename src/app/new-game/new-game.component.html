@@ -1,31 +1,38 @@
-<div class="card">
-    <div class="card-body">
-      <p class="card-text">Zumaroeth, the last continent on a dying planet.  As the ruler of a nation, you must guide your people via any means to success.  Blah blah blah.</p>
+<div class="d-flex flex-wrap">
+    <!-- <div class="card">
+        <div class="card-header">Welcome to Zumaroeth</div>
+        <div class="card-body"> As the newly-elected leader of the colony of Zumaroeth, you must decide how to set the
+            colony up for success. Make decisions based on your knowledge and experience in order to survive. 
+        </div>
+    </div> -->
+    <div class="card">
+        <div class="card-header">As the newly-elected leader of the colony of Zumaroeth, you must decide how to set the
+            colony up for success. Make decisions based on your knowledge and experience in order to survive. </div>
+        <div class="card-body">
+            <h6 class="card-subtitle text-muted">Give us the details of Zumaroeth's new ruler</h6>
+            <form>
+                <div class="form-group">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" [(ngModel)]="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName" name="lastName">
+                </div>
+                <div class="form-group">
+                    <label for="age" class="form-label">Starting Age</label>
+                    <input type="number" class="form-control" id="age" [(ngModel)]="age" name="age" min="25" max="50">
+                </div>
+                <div class="form-group my-3">
+                    <button [disabled]="isCreateDisabled()" type="submit" class="btn btn-primary"
+                        (click)="createGame()">Begin Game</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer"></div>
     </div>
-  </div>
-<form>
-    <div class="form-group">
-        <label for="name" class="form-label">Nation Name</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="nationName" name="name">
-    </div>
-    <div class="form-group">
-        <label for="title" class="form-label">Your Ruler's Title</label>
-        <input type="text" class="form-control" id="title" [(ngModel)]="title" name="title">
-    </div>
-    <div class="form-group">
-        <label for="firstName" class="form-label">Your Ruler's First Name</label>
-        <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="firstName">
-    </div>
-    <div class="form-group">
-        <label for="lastName" class="form-label">Your Ruler's First Name</label>
-        <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName" name="lastName">
-    </div>
-    <div class="form-group">
-        <label for="age" class="form-label">Your Ruler's Starting Age</label>
-        <input type="number" class="form-control" id="age" [(ngModel)]="age" name="age" min="15" max="50">
-    </div>
-    <div class="form-group my-3">
-        <button [disabled]="isCreateDisabled()" type="submit" class="btn btn-primary" (click)="createGame()">Begin Game</button>
-    </div>
-    
-</form>
+</div>

@@ -18,8 +18,7 @@ export class NewGameComponent {
   firstName="";
   lastName="";
   age = 25;
-  title = "";
-  nationName = "";
+  title = "Governor";
 
 
   constructor(private gameSaver: GameSaverService, private router: Router) { }
@@ -27,7 +26,6 @@ export class NewGameComponent {
   createGame(): void{
 
     var game = new Game(this.firstName, this.lastName, this.age);
-    game.nationName = this.nationName;
     game.rulerTitle = this.title;
 
     this.gameSaver.Save(game);
@@ -39,11 +37,9 @@ export class NewGameComponent {
       !this.lastName || 
       !this.title ||
       !this.age || 
-      !this.nationName || 
       this.firstName.trim().length == 0 || 
       this.lastName.trim().length == 0 ||  
       this.title.trim().length == 0 ||  
-      this.nationName.trim().length == 0 || 
       this.age < 15 || 
       this.age > 50;
   }

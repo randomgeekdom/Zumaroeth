@@ -4,7 +4,6 @@ import Entity from "./entity";
 
 export default class Game extends Entity {
 
-    nationName: string = "";
     rulerTitle: string = "";
     ruler: Character;
     year = 1;
