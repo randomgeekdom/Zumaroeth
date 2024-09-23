@@ -1,2 +1,6 @@
 <h4>{{gameEvent()?.header}}</h4>
 <p>{{gameEvent()?.description}}</p>
+
+<div *ngFor="let choice of gameEvent()?.choices">
+    <button class="btn btn-primary" (click)="choose(choice)">{{choice.header}}</button>
+</div>

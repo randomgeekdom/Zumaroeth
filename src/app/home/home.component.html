@@ -9,8 +9,8 @@
             </li>
         </ul>
     </div>
-    <div class="card">
-        <app-game-event *ngIf="!!currentEvent" [gameEvent]="currentEvent"></app-game-event>
+    <div class="card" >
+        <app-game-event *ngIf="!!currentEvent && !!game" [gameEvent]="currentEvent" [game]="game" ></app-game-event>
     </div>
 </div>
 <div class="d-flex flex-row my-3">

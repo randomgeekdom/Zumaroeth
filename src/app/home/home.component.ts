@@ -47,4 +47,8 @@ export class HomeComponent implements OnInit {
   select(event: GameEvent): void {
     this.currentEvent = event;
   }
+
+  dismissEvent(): void {
+    this.currentEvent = undefined;
+  }
 }
