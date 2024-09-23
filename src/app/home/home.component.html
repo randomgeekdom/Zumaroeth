@@ -3,13 +3,14 @@
 <div *ngIf="!!game" class="d-flex flex-wrap">
     <div class="card">
         <ul class="list-group">
-            <li *ngFor="let event of events" class="list-group-item" (click)="nextTurn()" style="cursor: pointer">
+            <li *ngFor="let event of events" class="list-group-item" (click)="select(event)" style="cursor: pointer">
                 <img class="img img-thumbnail" src="{{event.image}}" />
                 {{event.header}}
             </li>
         </ul>
     </div>
     <div class="card">
+        <app-game-event *ngIf="!!currentEvent" [gameEvent]="currentEvent"></app-game-event>
     </div>
 </div>
 <div class="d-flex flex-row my-3">

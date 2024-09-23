@@ -12,7 +12,7 @@ export class TurnTakerService {
 
   takeTurn(game: Game) {
     game.year ++;
-    var event = new GameEvent("A new turn", "A new turn", "", [])
+    var event = new GameEvent("A new turn", "A new turn: " + game.year, "", [])
     game.events.push(event);
     this.gameSaver.Save(game);
   }
