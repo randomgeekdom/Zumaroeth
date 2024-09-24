@@ -23,21 +23,12 @@ export class HomeComponent implements OnInit {
   constructor(public gameSaver: GameSaverService, public router: Router, public turnTaker: TurnTakerService) { }
 
   ngOnInit(): void {
-    let game = this.gameSaver.Load();
-    if (!!game) {
-      this.game = game;
-
-      if (this.game.events.length > 0) {
-        this.currentEvent = this.game.events[0];
-      }
-    }
-    else {
-      this.router.navigate(['/new-game']);
-    }
+    this.reloadEvent();
   }
 
   nextTurn(): void {
     this.turnTaker.takeTurn(this.game!);
+    this.reloadEvent();
   }
 
   get events(): GameEvent[] {
@@ -48,7 +39,20 @@ export class HomeComponent implements OnInit {
     this.currentEvent = event;
   }
 
-  dismissEvent(): void {
-    this.currentEvent = undefined;
+  reloadEvent(): void {
+    let game = this.gameSaver.Load();
+    if (!!game) {
+      this.game = game;
+
+      if (this.game.events.length > 0) {
+        this.currentEvent = this.game.events[0];
+      }
+      else{
+        this.currentEvent = undefined;
+      }
+    }
+    else {
+      this.router.navigate(['/new-game']);
+    }
   }
 }

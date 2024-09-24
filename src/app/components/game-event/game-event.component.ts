@@ -4,6 +4,7 @@ import Game from '../../models/game';
 import { CommonModule } from '@angular/common';
 import Choice from '../../models/choice';
 import { Observable } from 'rxjs';
+import { EventResolverService } from '../../services/event-resolver.service';
 
 @Component({
   selector: 'app-game-event',
@@ -13,15 +14,14 @@ import { Observable } from 'rxjs';
   styleUrl: './game-event.component.scss'
 })
 export class GameEventComponent {
+  constructor(private eventResolver: EventResolverService) { }
+
   gameEvent = input<GameEvent>();
   game = input<Game>();
-  eventDismissed = input<Observable<void>>();
+  eventDismissed = output<void>();
 
   choose(choice: Choice) {
-    let gameEvent = this.gameEvent()!;
-    let game = this.game()!;
-    debugger;
-    choice.action(game, gameEvent);
-    this.eventDismissed();
+    this.eventResolver.resolve(this.game()!, this.gameEvent()!, choice);
+    this.eventDismissed.emit();
   }
 }
