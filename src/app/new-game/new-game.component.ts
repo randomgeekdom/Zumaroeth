@@ -5,6 +5,7 @@ import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import Character from '../models/character';
+import { Sex } from '../models/enumerations/sex';
 
 @Component({
   selector: 'app-new-game',
@@ -19,13 +20,14 @@ export class NewGameComponent {
   lastName="";
   age = 25;
   title = "Governor";
+  sex = Sex.FEMALE;
 
 
   constructor(private gameSaver: GameSaverService, private router: Router) { }
 
   createGame(): void{
 
-    var game = new Game(this.firstName, this.lastName, this.age);
+    var game = new Game(this.firstName, this.lastName, this.age, this.sex);
     game.rulerTitle = this.title;
 
     this.gameSaver.Save(game);
@@ -36,7 +38,7 @@ export class NewGameComponent {
     return !this.firstName || 
       !this.lastName || 
       !this.title ||
-      !this.age || 
+      !this.age ||
       this.firstName.trim().length == 0 || 
       this.lastName.trim().length == 0 ||  
       this.title.trim().length == 0 ||  

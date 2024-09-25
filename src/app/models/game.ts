@@ -1,6 +1,7 @@
 
 import Character from "./character";
 import Entity from "./entity";
+import { Sex } from "./enumerations/sex";
 import GameEvent from "./game-event";
 
 export default class Game extends Entity {
@@ -10,8 +11,8 @@ export default class Game extends Entity {
     year = 1;
     events: GameEvent[] = [];
 
-    constructor(firstName: string, lastName: string, age: number) {
+    constructor(firstName: string, lastName: string, age: number, sex: Sex) {
         super();
-        this.ruler = new Character(firstName, lastName, age);
+        this.ruler = new Character(firstName, lastName, age, sex);
     }
 }
