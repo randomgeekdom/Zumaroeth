@@ -6,11 +6,14 @@ export default class Character extends Entity {
     lastName = "";
     age = 0;
     sex = Sex.OTHER;
-    constructor(firstName: string, lastName: string, age: number, sex: Sex = Sex.OTHER) {
+    title = "";
+
+    constructor(firstName: string, lastName: string, age: number, sex: Sex, title: string) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.sex = sex;
+        this.title = title;
     }
 }

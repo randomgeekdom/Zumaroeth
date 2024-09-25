@@ -27,7 +27,7 @@ export class NewGameComponent {
 
   createGame(): void{
 
-    var game = new Game(this.firstName, this.lastName, this.age, this.sex);
+    var game = new Game(this.firstName, this.lastName, this.age, this.sex, this.title + "of Zumaroeth");
     game.rulerTitle = this.title;
 
     this.gameSaver.Save(game);

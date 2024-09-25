@@ -1,6 +1,13 @@
-<h4>{{gameEvent()?.header}}</h4>
-<p>{{gameEvent()?.description}}</p>
-
-<div *ngFor="let choice of gameEvent()?.choices">
-    <button class="btn btn-primary" (click)="choose(choice)">{{choice.header}}</button>
+<div class="card">
+    <img class="img img-thumbnail" src="{{gameEvent()?.image}}" />
+    <div class="card-body">
+        <h5 class="card-title">{{gameEvent()?.header}}</h5>
+        <p class="card-text">{{gameEvent()?.description}}</p>
+    </div>
+    <div class="card-footer">
+        <div *ngFor="let choice of gameEvent()?.choices">
+            <button class="btn btn-primary" (click)="choose(choice)">{{choice.header}}</button>
+        </div>
+    </div>
 </div>
+

@@ -11,8 +11,8 @@ export default class Game extends Entity {
     year = 1;
     events: GameEvent[] = [];
 
-    constructor(firstName: string, lastName: string, age: number, sex: Sex) {
+    constructor(firstName: string, lastName: string, age: number, sex: Sex, title: string) {
         super();
-        this.ruler = new Character(firstName, lastName, age, sex);
+        this.ruler = new Character(firstName, lastName, age, sex, title);
     }
 }
