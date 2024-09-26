@@ -1,5 +1,6 @@
-<h6>Ruler: {{game?.rulerTitle}} {{game?.ruler?.firstName}} {{game?.ruler?.lastName}}</h6>
+<h6>Ruler: {{game?.rulerTitle}} {{game?.ruler?.firstName}} {{game?.ruler?.lastName}} (age {{game?.ruler?.age}})</h6>
 <h6>Year: {{game?.year}}</h6>
+<h6>Population: {{game?.population}}</h6>
 <div *ngIf="!!game" class="d-flex flex-wrap">
     <div class="card">
         <h5 class="card-header">Events</h5>
