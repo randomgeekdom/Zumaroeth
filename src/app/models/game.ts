@@ -10,6 +10,7 @@ export default class Game extends Entity {
     ruler: Character;
     year = 1;
     events: GameEvent[] = [];
+    aristocracy: Character[] = [];
 
     constructor(firstName: string, lastName: string, age: number, sex: Sex, title: string) {
         super();

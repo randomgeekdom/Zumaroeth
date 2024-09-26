@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Game from '../models/game';
 import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import Character from '../models/character';
 import { Sex } from '../models/enumerations/sex';
+import { uniqueNamesGenerator, names } from 'unique-names-generator';
 
 @Component({
   selector: 'app-new-game',
@@ -23,7 +23,10 @@ export class NewGameComponent {
   sex = Sex.FEMALE;
 
 
-  constructor(private gameSaver: GameSaverService, private router: Router) { }
+  constructor(private gameSaver: GameSaverService, private router: Router) {
+    this.firstName = uniqueNamesGenerator({ dictionaries: [names], style: "capital", length: 1 });
+    this.lastName = uniqueNamesGenerator({ dictionaries: [names], style: "capital", length: 1 });
+   }
 
   createGame(): void{
 
