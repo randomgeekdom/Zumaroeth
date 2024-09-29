@@ -8,7 +8,7 @@
             <ul class="list-group" *ngIf="events.length > 0">
                 <li *ngFor="let event of events" class="list-group-item" (click)="select(event)"
                     style="cursor: pointer">
-                    <img class="img img-thumbnail" src="{{event.image}}" />
+                    <img class="img img-thumbnail" src="img/{{event.image}}" />
                     {{event.header}}
                 </li>
             </ul>
@@ -21,9 +21,6 @@
         <h5 class="card-header">Current Event</h5>
         <app-game-event *ngIf="!!currentEvent && !!game" [gameEvent]="currentEvent" [game]="game"
             (eventDismissed)="reloadEvent()"></app-game-event>
-    </div>
-    <div class="card">
-        <h5 class="card-header">Character Profile</h5>
     </div>
     <div class="card">
         <h5 class="card-header">Aristocracy</h5>

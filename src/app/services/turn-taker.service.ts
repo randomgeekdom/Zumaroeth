@@ -34,7 +34,7 @@ export class TurnTakerService {
         game.ruler = new Character(uniqueNamesGenerator({ dictionaries: [names], style: "capital", length: 1 }), uniqueNamesGenerator({ dictionaries: [names], style: "capital", length: 1 }), 30, Sex.MALE, previousRulerTitle);
       }
       
-      game.events.push(new GameEvent(EventType.Alert, "Death of the " + game.rulerTitle, `The ${previousRuler} has died.  Long live the new ${game.rulerTitle}, ${game.ruler.firstName} ${game.ruler.lastName}.`, "death.jpg", [new Choice("Continue", "continue", "continue")]));
+      game.events.push(new GameEvent(EventType.Alert, "Death of the " + game.rulerTitle, `The ${previousRuler} has died.  Long live the new ${game.rulerTitle}, ${game.ruler.firstName} ${game.ruler.lastName}.`, "death.png", [new Choice("Continue", "continue", "continue")]));
     }
 
     game.population = Math.round(game.population * 1.0087 + 1);
