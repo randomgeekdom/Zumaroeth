@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Game from '../models/game';
 import { GameSaverService } from '../services/game-saver.service';
 import { Router } from '@angular/router';
@@ -16,6 +16,7 @@ import { GameEventComponent } from '../components/game-event/game-event.componen
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('myInput') inputElement!: ElementRef;
 
   game: Game | undefined;
   currentEvent: GameEvent | undefined;
@@ -47,12 +48,19 @@ export class HomeComponent implements OnInit {
       if (this.game.events.length > 0) {
         this.currentEvent = this.game.events[0];
       }
-      else{
+      else {
         this.currentEvent = undefined;
       }
     }
     else {
       this.router.navigate(['/new-game']);
+    }
+  }
+
+  showModal(): void {
+    const myInput = document.getElementById('exampleModal');
+    if (!!myInput) {
+      myInput.focus();
     }
   }
 }

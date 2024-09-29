@@ -17,10 +17,9 @@
             </div>
         </div>
     </div>
-    <div class="card">
-        <h5 class="card-header">Current Event</h5>
-        <app-game-event *ngIf="!!currentEvent && !!game" [gameEvent]="currentEvent" [game]="game"
-            (eventDismissed)="reloadEvent()"></app-game-event>
+    <div class="card" *ngIf="!!currentEvent && !!game">
+        <!-- <h5 class="card-header">Current Event</h5> -->
+        <app-game-event [gameEvent]="currentEvent" [game]="game" (eventDismissed)="reloadEvent()"></app-game-event>
     </div>
     <div class="card">
         <h5 class="card-header">Aristocracy</h5>
@@ -28,4 +27,22 @@
 </div>
 <div class="d-flex flex-row my-3">
     <button [disabled]="events.length > 0" class="btn btn-primary mx-1" (click)="nextTurn()">Next Turn</button>
+</div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Launch demo modal
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"> ... </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
 </div>
